@@ -1,0 +1,19 @@
+<h2>Editing Book</h2>
+<%= render 'layouts/errors', book: @book %>
+<%= form_with model: @book, method: :patch do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body, row: "6" %>
+  </div>
+  <div>
+    <%= f.submit "Update Book" %>
+  </div>
+<% end %>
+<div>
+  <%= link_to "Show", book_path(@book) %>
+  <%= link_to "Back", books_path %>
+</div>
